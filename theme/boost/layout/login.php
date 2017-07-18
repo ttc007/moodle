@@ -29,6 +29,7 @@ $bodyattributes = $OUTPUT->body_attributes();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
+    'favicon1' =>  $OUTPUT->pix_url('favicon1', 'theme'),
     'bodyattributes' => $bodyattributes
 ];
 

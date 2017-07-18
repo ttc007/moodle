@@ -162,13 +162,13 @@ if (empty($CFG->forcedefaultmymoodle) && $PAGE->user_allowed_editing()) {
 }
 
 
-include("../header.php");
+// include("../header.php");
 echo $OUTPUT->header();
 
 echo $OUTPUT->custom_block_region('content');
 
 echo $OUTPUT->footer();
-include("../footer.php");
+// include("../footer.php");
 // Trigger dashboard has been viewed event.
 $eventparams = array('context' => $context);
 $event = \core\event\dashboard_viewed::create($eventparams);

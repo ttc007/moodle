@@ -25,7 +25,6 @@
  */
 
 require_once('../config.php');
-unset($_COOKIE['user']);
 $PAGE->set_url('/login/logout.php');
 $PAGE->set_context(context_system::instance());
 

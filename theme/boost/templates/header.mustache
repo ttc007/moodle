@@ -37,6 +37,25 @@
             {{/ output.should_display_navbar_logo }}
             <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
         </a>
+         <div class="dropdown pull-left">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tin tuc & su kien
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+            </ul>
+          </div>
+        <button class="btn btn-info" style="float:left;margin:0 1em;">Nap tien nhan ngay thu cuoi hoang kim</button>
+        <form action="/moodle1/course/search.php?search=1" id="{{id}}" method="get" class="form-inline" style="float:right;margin-left:1em;">
+            <fieldset class="coursesearchbox invisiblefieldset">
+                <label for="{{inputid}}">{{#str}}searchcourses{{/str}}</label>
+                <input id="{{inputid}}" name="search" type="text" size="{{inputsize}}" value="{{value}}" class="form-control">
+                <button class="btn btn-secondary" type="submit">{{#str}}go{{/str}}</button>
+            </fieldset>
+        </form>
 
         <!-- user_menu -->
         {{{ output.user_menu }}}

@@ -57,9 +57,11 @@
 }}
 <nav class="list-group">
 {{# flatnavigation }}
+    <hr style="margin:.2em;">
     {{#showdivider}}
 </nav>
 <nav class="list-group m-t-1">
+    
     {{/showdivider}}
     {{#action}}
     <a class="list-group-item list-group-item-action {{#isactive}}font-weight-bold{{/isactive}}" href="{{{action}}}" data-key="{{key}}">
@@ -88,5 +90,8 @@
         </div>
     </div>
     {{/action}}
+
 {{/ flatnavigation }}
+
 </nav>
+<img src={{danhngon}} style="margin-top:50px;width:100%">

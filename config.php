@@ -21,7 +21,7 @@ $CFG->dboptions = array (
 $CFG->wwwroot   = 'http://localhost/moodle1';
 $CFG->dataroot  = '/var/www/moodledata';
 $CFG->admin     = 'admin';
-
+$CFG->keeptempdirectoriesonbackup = true;
 $CFG->directorypermissions = 0777;
 
 require_once(__DIR__ . '/lib/setup.php');

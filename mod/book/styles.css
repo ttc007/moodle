@@ -1,3 +1,16 @@
+@font-face {
+    font-family: goodDogFont;
+    src: url([[font:theme|good_dog.woff]]);
+}
+@font-face {
+    font-family: ThreeDumb;
+    src: url([[font:mod_book|3dumb.woff]]);
+}
+ 
+a {font-family:goodDogFont;}
+.path-mod-book .book_chapter_title {
+    font-family: ThreeDumb;
+}
 .path-mod-book .navtop img.icon,
 .path-mod-book .navbottom img.icon {
     margin-right: 4px;

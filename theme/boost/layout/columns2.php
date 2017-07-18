@@ -41,8 +41,12 @@ $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'sitename' => format_string($SITE->shortname."TTC", true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
+    'favicon1' =>  $OUTPUT->pix_url('favicon1', 'theme'),
+    'image1' =>  $OUTPUT->pix_url('thuvien2', 'theme'),
+    'image2' =>  $OUTPUT->pix_url('thuvien3', 'theme'),
+    'danhngon' =>  $OUTPUT->pix_url('danhngon', 'theme'),
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,

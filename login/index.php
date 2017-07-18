@@ -152,7 +152,7 @@ if ($frm and isset($frm->username)) {                             // Login WITH 
     } else {
         if (empty($errormsg)) {
             $user = authenticate_user_login($frm->username, $frm->password, false, $errorcode);
-            setcookie("user", $frm->username, time()+3600,"/");
+            // setcookie("user", $frm->username, time()+3600,"/");
             // header("location:..");
             // die;
         }
@@ -177,11 +177,11 @@ if ($frm and isset($frm->username)) {                             // Login WITH 
         // language setup
         if (isguestuser($user)) {
             // no predefined language for guests - use existing session or default site lang
-            // unset($user->lang);
+            unset($user->lang);
 
         } else if (!empty($user->lang)) {
             // unset previous session language - use user preference instead
-            // unset($SESSION->lang);
+            unset($SESSION->lang);
         }
 
         if (empty($user->confirmed)) {       // This account was never confirmed
@@ -213,7 +213,7 @@ if ($frm and isset($frm->username)) {                             // Login WITH 
             set_moodle_cookie($USER->username);
         }
 
-        // $urltogo = core_login_get_return_url();
+        $urltogo = core_login_get_return_url();
 
     /// check if user password has expired
     /// Currently supported only for ldap-authentication module
@@ -354,8 +354,8 @@ if (!empty($SESSION->loginerrormsg)) {
 $PAGE->set_title("$site->fullname: $loginsite");
 $PAGE->set_heading("$site->fullname");
 
-// echo $OUTPUT->header();
-include("../header.php");
+echo $OUTPUT->header();
+// include("../header.php");
 
 if (isloggedin() and !isguestuser()) {
     // prevent logging when already logged in, we do not want them to relogin by accident because sesskey would be changed
@@ -369,6 +369,6 @@ if (isloggedin() and !isguestuser()) {
     $loginform->set_error($errormsg);
     echo $OUTPUT->render($loginform);
 }
-include("../footer.php");
-// echo $OUTPUT->footer();
+// include("../footer.php");
+echo $OUTPUT->footer();
 ?>
